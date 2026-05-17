@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { Navbar } from "@/components/site/Navbar";
 import { Hero } from "@/components/site/Hero";
 import { About } from "@/components/site/About";
@@ -16,11 +15,7 @@ import { ScrollProgress } from "@/components/site/ScrollProgress";
 import { BackToTop } from "@/components/site/BackToTop";
 import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 
-export const Route = createFileRoute("/")({
-  component: Index,
-});
-
-function Index() {
+export default function App() {
   return (
     <div className="relative overflow-x-clip bg-background text-foreground">
       <ScrollProgress />
