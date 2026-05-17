@@ -50,7 +50,7 @@ export function Contact() {
               {[
                 { Icon: Mail, t: "Email us", v: "hello@analytics.training" },
                 { Icon: Phone, t: "Call us", v: "+91 98765 43210" },
-                { Icon: MapPin, t: "Visit us", v: "Hi-Tech City, Hyderabad, India" },
+                { Icon: MapPin, t: "Visit us", v: "Pondicherry , India" },
               ].map(({ Icon, t, v }) => (
                 <div key={t} className="group flex items-start gap-4 rounded-2xl border border-border bg-card p-5 transition-all hover:-translate-y-1 hover:border-primary/30 hover:shadow-soft">
                   <div className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand text-primary-foreground">

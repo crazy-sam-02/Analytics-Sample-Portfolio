@@ -64,7 +64,7 @@ export function Hero() {
             #1 Training & Placement Partner for Colleges
           </span>
 
-          <h1 className="mt-6 text-4xl font-bold leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
+          <h1 className="mt-6 min-h-[3.2em] text-4xl font-bold leading-[1.05] tracking-tight text-foreground sm:text-5xl md:min-h-[2.1em] md:text-6xl lg:text-7xl">
             Transforming Students Into <br className="hidden md:block" />
             <span className="text-gradient">{typed}</span>
             <span className="ml-1 inline-block h-[0.85em] w-[3px] translate-y-1 bg-primary animate-[blink_1s_steps(2)_infinite]" />
