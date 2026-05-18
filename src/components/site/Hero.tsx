@@ -112,7 +112,7 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          className="relative lg:col-span-5"
+          className="relative hidden md:block lg:col-span-5"
         >
           <div className="relative">
             <div className="absolute -inset-8 -z-10 rounded-[3rem] bg-gradient-to-tr from-primary/30 via-primary-glow/20 to-accent/30 blur-3xl" />

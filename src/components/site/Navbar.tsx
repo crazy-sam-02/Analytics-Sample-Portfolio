@@ -107,33 +107,62 @@ export function Navbar() {
           onClick={() => setOpen((v) => !v)}
           className="rounded-full p-2 text-primary lg:hidden"
           aria-label="Toggle menu"
+          aria-expanded={open}
+          aria-controls="mobile-menu"
         >
           {open ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
       {open && (
-        <div className="mx-4 mt-2 rounded-2xl glass p-4 shadow-soft lg:hidden">
-          <div className="flex flex-col">
-            {links.map((l) => (
-              <button
-                key={l.id}
-                onClick={() => go(l.id)}
-                className={cn(
-                  "rounded-lg px-3 py-2.5 text-left text-sm font-medium text-muted-foreground hover:bg-secondary hover:text-primary",
-                  active === l.id && "bg-secondary text-primary",
-                )}
-              >
-                {l.label}
+        <div className="fixed inset-0 z-[60] lg:hidden">
+          <button
+            type="button"
+            aria-label="Close menu"
+            onClick={() => setOpen(false)}
+            className="absolute inset-0 bg-black/40 backdrop-blur-sm"
+          />
+          <aside
+            id="mobile-menu"
+            className="absolute right-0 top-0 flex h-full w-[82%] max-w-sm flex-col glass p-6 shadow-soft"
+          >
+            <div className="flex items-center justify-between">
+              <button onClick={() => go("home")} className="flex items-center gap-2" aria-label="Analytics home">
+                <img src={logo} alt="Analytics logo" className="h-7 w-auto" />
               </button>
-            ))}
+              <button
+                type="button"
+                onClick={() => setOpen(false)}
+                className="rounded-full p-2 text-primary"
+                aria-label="Close menu"
+              >
+                <X size={18} />
+              </button>
+            </div>
+
+            <div className="mt-6 flex flex-1 flex-col gap-1">
+              {links.map((l) => (
+                <button
+                  key={l.id}
+                  onClick={() => go(l.id)}
+                  className={cn(
+                    "rounded-xl px-4 py-3 text-left text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-primary",
+                    active === l.id && "bg-secondary text-primary",
+                  )}
+                  aria-current={active === l.id ? "page" : undefined}
+                >
+                  {l.label}
+                </button>
+              ))}
+            </div>
+
             <button
               onClick={() => go("contact")}
-              className="mt-2 rounded-full bg-brand px-4 py-2.5 text-sm font-semibold text-primary-foreground"
+              className="mt-6 rounded-full bg-brand px-4 py-3 text-sm font-semibold text-primary-foreground"
             >
               Enroll Now
             </button>
-          </div>
+          </aside>
         </div>
       )}
     </header>
